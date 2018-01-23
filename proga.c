@@ -10,16 +10,19 @@ int main()
     int mem;
     int min;
     int mem1;
+    int xmin;
+    int zmin;
     min = 150;
     srand(time(NULL));
     m = rand() % 10 + 3;
     n = rand() % 10 + 4;
     int massive[m][n];
+    int delmas[m-1][n-1];
     for (x = 0; x < m; x++)
     {
         for (z = 0;z < n; z++)
         {
-            massive[x][z] = rand() % 99;
+            massive[x][z] = rand() % 99+1;
             printf("%d \t", massive[x][z]);
         }
         printf("\n");
@@ -55,31 +58,27 @@ int main()
         for (z = 0;z < n; z++)
         {
             if (massive[x][z] < min)
+            {
                 min = massive[x][z];
-
+                xmin = x;
+                zmin = z;
+            }
     }
     }
         for (x = 0; x < m; x++)
         {
 		for (z = 0; z < n; z++)
 		 {
-			 if (massive[x][z] == min)
-			  {
-			      for (x; x < n; x++ )
-			          massive [x][n] = massive[x][n+1];
-			      for (z; z < m; z++)
-                    massive[m][z] = massive[m][n+1];
-			 }
+		     if (x != xmin && z != zmin)
+             {
+                delmas[x][z] = massive[x][z];
+                printf("%d \t", delmas[x][z]);
+             }
 		}
-
+		if (x != xmin)
+            printf("\n");
 	}
     printf("%d" , min);
-     for (x = 0; x < m-1; x++)
-    {
-            for (z = 0;z < n-1; z++)
-            printf("%d \t", massive[x][z]);
-        printf("\n");
-    }
+
 return 0;
 }
-
