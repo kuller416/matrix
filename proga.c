@@ -12,12 +12,17 @@ int main()
     int mem1;
     int xmin;
     int zmin;
+    int o;
+    int p;
     min = 150;
     srand(time(NULL));
     m = rand() % 10 + 3;
     n = rand() % 10 + 4;
     int massive[m][n];
     int delmas[m-1][n-1];
+    int k;
+    int q;
+    printf("\nmassive\n");
     for (x = 0; x < m; x++)
     {
         for (z = 0;z < n; z++)
@@ -28,6 +33,7 @@ int main()
         printf("\n");
     }
     printf("\n\n\n");
+    printf("\ndef massive\n");
     for(z = 0; z < n/2; z++)
     {
         mem = massive[0][z];
@@ -53,6 +59,7 @@ int main()
         printf("\n");
     }
     printf("\n\n");
+    printf("\nmassive min\n");
         for (x = 0; x < m; x++)
     {
         for (z = 0;z < n; z++)
@@ -78,7 +85,54 @@ int main()
 		if (x != xmin)
             printf("\n");
 	}
-    printf("%d" , min);
+    printf("%d \n" , min);
+    scanf("%d", &o);
+    scanf("%d", &p);
+    int c[o][p];
+    printf("\nyour massive\n");
+    for (x = 0; x < o; x++)
+    {
+        for (z = 0; z < p; z++)
+        {
+            scanf("%d", &c[x][z]);
+        }
+    }
+        for (x = 0; x < o; x++)
+    {
+        for (z = 0; z < p; z++)
+        {
+            printf("%d \t", c[x][z]);
+        }
+        printf("\n");
+    }
+    int res[m][p];
+    if (o != n)
+    {
+        printf("nelzia \n");
+    }
+    else
+    {
+    for(x = 0; x < m; x++)
+    {
+        for(z = 0; z < p; z++)
+    {
+            res[x][z] = 0;
+            for(k = 0; k < n; k++)
+            {
+                res[x][z] = massive[x][k] * c[k][z] + res[x][z];
+            }
+    }
+    }
+    printf("\nthe result of multiplying\n");
+    for (x = 0; x < m; x++)
+{
+    for (z = 0; z < p; z++)
+    {
+        printf("%d \t", res[x][z]);
+}
+printf("\n");
+}
 
+    }
 return 0;
 }
