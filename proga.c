@@ -4,9 +4,9 @@
 
 int main()
 {
-    /* m -  line , n - stolbiki */
+    /* m -  line , n - pillars */
     int m, n;
-    int x, z; /* schetchiki */
+    int x, z; /* SCH */
     int mem;
     int min;
     int mem1;
