@@ -110,14 +110,14 @@ int main()
     }
     else
     {
-    for(x = 0; x < m; x++)
+    for(x = 0; x < m-1; x++)
     {
         for(z = 0; z < p; z++)
     {
             res[x][z] = 0;
-            for(k = 0; k < n; k++)
+            for(k = 0; k < n-1; k++)
             {
-                res[x][z] = delmas[x][k] * c[k][z] + res[x][z];
+                res[x][z] = delmas[x][k] * c[k][z];
             }
     }
     }
