@@ -18,7 +18,7 @@ int main()
     n = rand() % 10 + 4;
     int massive[m][n];
     int delmas[m-1][n-1];
-    int k;  
+    int k;
     printf("\nmassive\n");
     for (x = 0; x < m; x++)
     {
@@ -82,7 +82,8 @@ int main()
 		if (x != xmin)
             printf("\n");
 	}
-    printf("%d \n" , min);
+    printf("min element %d \n" , min);
+    printf("matrix size (line <Enter> pillar   ");
     scanf("%d", &o);
     scanf("%d", &p);
     int c[o][p];
@@ -102,10 +103,10 @@ int main()
         }
         printf("\n");
     }
-    int res[m][p];
-    if (o != n)
+    int res[m-1][p];
+    if (o != n-1)
     {
-        printf("nelzia \n");
+        printf("NO \n");
     }
     else
     {
@@ -116,12 +117,12 @@ int main()
             res[x][z] = 0;
             for(k = 0; k < n; k++)
             {
-                res[x][z] = massive[x][k] * c[k][z] + res[x][z];
+                res[x][z] = delmas[x][k] * c[k][z] + res[x][z];
             }
     }
     }
     printf("\nthe result of multiplying\n");
-    for (x = 0; x < m; x++)
+    for (x = 0; x < m-1; x++)
 {
     for (z = 0; z < p; z++)
     {
