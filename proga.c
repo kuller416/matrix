@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <time.h>
 int main()
 {
     /* m -  line , n - pillars */
@@ -8,7 +8,6 @@ int main()
     int x, z; /* SCH */
     int mem;
     int min;
-    int mem1;
     int xmin;
     int zmin;
     int o;
@@ -19,8 +18,7 @@ int main()
     n = rand() % 10 + 4;
     int massive[m][n];
     int delmas[m-1][n-1];
-    int k;
-    int q;
+    int k;  
     printf("\nmassive\n");
     for (x = 0; x < m; x++)
     {
